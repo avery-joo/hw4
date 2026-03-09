@@ -14,10 +14,14 @@
       <%= flash["notice"] %>
     </div>
     <div>
-      <a href="/">Home</a>
-      <a href="/logout">Logout</a>
-      <a href="/login">Login</a>
-      <a href="/users/new">Signup</a>
+      <% if session["user_id"] == nil %>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/users/new">Signup</a>
+      <% else %>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+      <% end %>
     </div>
 
     <%= yield %>
