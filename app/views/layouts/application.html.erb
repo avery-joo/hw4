@@ -19,6 +19,8 @@
         <a href="/login">Login</a>
         <a href="/users/new">Signup</a>
       <% else %>
+        <% @user = User.find_by({"id" => session["user_id"]}) %>
+         Welcome, <%= @user["username"] %>!
         <a href="/">Home</a>
         <a href="/logout">Logout</a>
       <% end %>

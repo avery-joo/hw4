@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    
   end
 
   def create
@@ -9,7 +10,7 @@ class SessionsController < ApplicationController
         cookies["zebra"] = "giraffe"
         session["user_id"] = @user["id"]
 
-        flash["notice"] = "Welcome."
+        flash["notice"] = "Welcome"
         redirect_to "/places"
       else
         flash["notice"] = "Incorrect password." # 1-2. when password is incorrect
