@@ -7,9 +7,15 @@
   <p><%= entry["description"] %></p>
 <% end %>
 
-<p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
-</p>
+<% if session["user_id"] != nil %>
+  <p>
+    <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
+  </p>
+<% else %>
+  <p>
+    <a href="/login">Login</a> to add a new entry.
+  </p>
+<% end %>
 
 <p>
   <a href="/places">Back to All Places</a>
