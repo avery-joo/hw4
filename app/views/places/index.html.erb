@@ -1,13 +1,14 @@
 <h1>Places</h1>
 
+<% if session["user_id"] != nil %>
+  <p>
+    <a href="/places/new" class="btn btn-success">New Place</a>
+  </p>
+<% end %>
+
 <ul>
   <% for place in @places %>
     <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
   <% end %>
 </ul>
 
-<% if session["user_id"] != nil %>
-  <p>
-    <a href="/places/new">New place</a>
-  </p>
-<% end %>
